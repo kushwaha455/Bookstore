@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Freebook from './components/Freebook';
+import Login from './Login';
 
 
 const componentStyles = String.raw`@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
@@ -89,6 +90,7 @@ const App = () => {
   const [theme, setTheme] = useState(() => (
     localStorage.getItem('bookstore-theme') === 'dark' ? 'dark' : 'light'
   ));
+  const [loginOpen, setLoginOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -98,12 +100,20 @@ const App = () => {
   return (
     <>
       <style>{componentStyles}</style>
-      <div data-theme={theme} className="site-shell">
-        <Navbar theme={theme} onThemeChange={setTheme} />
-        <Banner />
-        <Freebook />
-        <Footer />
-      </div>
+      {loginOpen ? (
+        <Login onClose={() => setLoginOpen(false)} />
+      ) : (
+        <div data-theme={theme} className="site-shell">
+          <Navbar
+            theme={theme}
+            onThemeChange={setTheme}
+            onLoginClick={() => setLoginOpen(true)}
+          />
+          <Banner />
+          <Freebook />
+          <Footer />
+        </div>
+      )}
     </>
   );
 }

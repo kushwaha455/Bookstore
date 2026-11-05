@@ -171,27 +171,7 @@ background: #ed1683;
   transform: scale(1.12);
 }
 
-.courses-dots-decoration {
-position: absolute;
-  z-index: 1;
-  width: 44px;
-  height: 95px;
-  opacity: .8;
-  background-image: radial-gradient(#ff9bd0 1.5px, transparent 1.5px);
-  background-size: 13px 13px;
-  pointer-events: none;
-}
 
-.courses-dots-left {
-top: 68px;
-  left: 4px;
-}
-
-.courses-dots-right {
-right: 4px;
-  bottom: 42px;
-  height: 72px;
-}
 
 .courses-wave {
 position: absolute;
@@ -347,9 +327,6 @@ function Freebook() {
       <CardsStyles />
       <section className="courses-section" id="courses" aria-labelledby="courses-title">
       <span className="courses-spark" aria-hidden="true">〃</span>
-      <span className="courses-dots-decoration courses-dots-left" aria-hidden="true" />
-      <span className="courses-dots-decoration courses-dots-right" aria-hidden="true" />
-
       <div className="courses-inner">
         <div className="courses-heading">
           <div className="courses-heading-copy">

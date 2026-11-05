@@ -372,7 +372,8 @@ min-width: 62px;
     padding: 0 10px;
     font-size: 11px;
 }
-}`;
+}
+`;
 
 const navItems = [
   { label: 'Home', icon: 'home', href: '#home' },
@@ -381,7 +382,7 @@ const navItems = [
   { label: 'About', icon: 'about', href: '#about' },
 ];
 
-function Navbar({ theme, onThemeChange }) {
+function Navbar({ theme, onThemeChange, onLoginClick }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeHref, setActiveHref] = useState(() => (
     navItems.some(({ href }) => href === window.location.hash) ? window.location.hash : '#home'
@@ -459,7 +460,7 @@ function Navbar({ theme, onThemeChange }) {
         >
           <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={21} />
         </button>
-        <button className="login-button" type="button">
+        <button className="login-button" type="button" onClick={onLoginClick}>
           <Icon name="user" size={16} />
           <span>Login</span>
         </button>
@@ -472,6 +473,7 @@ function Navbar({ theme, onThemeChange }) {
 Navbar.propTypes = {
   theme: PropTypes.oneOf(['light', 'dark']).isRequired,
   onThemeChange: PropTypes.func.isRequired,
+  onLoginClick: PropTypes.func.isRequired,
 };
 
 export default Navbar;

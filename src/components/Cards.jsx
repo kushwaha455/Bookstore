@@ -4,7 +4,7 @@ import { Icon } from './Navbar';
 
 const componentStyles = String.raw`.course-card {
 position: relative;
-  height: 278px;
+  height: 330px;
   overflow: hidden;
   border: 1px solid #f0e2f1;
   border-radius: 17px;
@@ -33,7 +33,7 @@ position: absolute;
 .course-card-art {
 position: relative;
   display: grid;
-  height: 148px;
+  height: 185px;
   place-items: center;
   margin: 0;
   overflow: hidden;
@@ -44,10 +44,10 @@ position: relative;
 
 .course-card-art::before {
 position: absolute;
-  top: 27px;
+  top: 32px;
   left: 9%;
   width: 61%;
-  height: 75px;
+  height: 94px;
   border-radius: 48% 52% 43% 46%;
   background: linear-gradient(140deg, #ffe1f3, #fff5fb);
   content: '';
@@ -58,8 +58,9 @@ position: absolute;
 position: relative;
   z-index: 1;
   display: block;
-  width: 100%;
-  height: 210px;
+  width: 116%;
+  max-width: none;
+  height: 265px;
   object-fit: contain;
   object-position: center 54%;
   filter: drop-shadow(0 4px 5px rgb(42 35 62 / 12%));
@@ -68,11 +69,11 @@ position: relative;
 .favorite-button {
 position: absolute;
   z-index: 2;
-  top: 9px;
-  right: 9px;
+  top: 12px;
+  right: 12px;
   display: grid;
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   place-items: center;
   border: 1px solid #f0e8f4;
   border-radius: 50%;
@@ -97,19 +98,19 @@ border-color: #ffd5e9;
 .course-card-body {
 position: relative;
   z-index: 2;
-  padding: 5px 16px 13px;
+  padding: 8px 20px 16px;
 }
 
 .course-badge {
 display: inline-flex;
-  min-height: 18px;
+  min-height: 22px;
   align-items: center;
-  gap: 4px;
-  padding: 0 7px;
+  gap: 5px;
+  padding: 0 9px;
   border-radius: 999px;
   background: #ffd9ed;
   color: #c90068;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 500;
   line-height: 1;
 }
@@ -124,9 +125,9 @@ padding: 2px;
 
 .course-card-body h3 {
 overflow: hidden;
-  margin: 5px 0 1px;
+  margin: 7px 0 2px;
   color: var(--ink);
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: -.3px;
   line-height: 1.35;
@@ -136,9 +137,9 @@ overflow: hidden;
 
 .course-card-body > p {
 overflow: hidden;
-  margin: 2px 0 10px;
+  margin: 3px 0 14px;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.5;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -155,9 +156,9 @@ display: flex;
 display: flex;
   min-width: 0;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 11px;
   white-space: nowrap;
 }
 
@@ -169,13 +170,13 @@ display: inline-flex;
 
 .lesson-dot {
 display: grid;
-  width: 11px;
-  height: 11px;
+  width: 13px;
+  height: 13px;
   place-items: center;
   border-radius: 50%;
   background: #252a58;
   color: #fff;
-  font-size: 6px;
+  font-size: 7px;
 }
 
 .clock-icon {
@@ -192,17 +193,17 @@ width: 1px;
 
 .buy-course-button {
 display: inline-flex;
-  min-height: 30px;
+  min-height: 36px;
   flex: none;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  padding: 0 11px;
+  gap: 7px;
+  padding: 0 14px;
   border-radius: 999px;
   background: linear-gradient(110deg, #ffe1f2, #ffd0e9);
   box-shadow: 0 3px 8px rgb(236 22 130 / 10%);
   color: #d40071;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 600;
   text-decoration: none;
   transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
@@ -275,34 +276,34 @@ background: linear-gradient(110deg, #ff3da1, #e60078);
 
 @media (max-width: 860px) {
 .course-card {
-height: 290px;
+height: 320px;
 }
 
 .course-card-art {
-height: 158px;
+height: 180px;
 }
 
 .course-card-art img {
-height: 210px;
+height: 250px;
 }
 }
 
 @media (max-width: 600px) {
 .course-card {
-height: 298px;
+height: 320px;
 }
 
 .course-card-art {
-height: 166px;
+height: 180px;
 }
 
 .course-card-art img {
-height: 210px;
+height: 250px;
 }
 
 .course-card-body {
-padding-right: 15px;
-    padding-left: 15px;
+padding-right: 18px;
+padding-left: 18px;
 }
 }`;
 
@@ -326,8 +327,8 @@ function Cards({ item }) {
         >
           <svg
             aria-hidden="true"
-            width="17"
-            height="17"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill={isFavorite ? 'currentColor' : 'none'}
             stroke="currentColor"
